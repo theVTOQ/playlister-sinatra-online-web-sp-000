@@ -1,6 +1,5 @@
 class SongsController < ApplicationController
   enable :sessions
-  use Rack::Flash
   set :views, Proc.new { File.join(root, "../views/songs/") }
 
   get '/songs' do
