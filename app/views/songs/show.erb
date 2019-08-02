@@ -9,7 +9,7 @@
 <% end %>
 </ol>
 <p>Time between creation and update: <%= @song.updated_at - @song.created_at %></p>
-<% if @song.updated_at > @song.created_at %>
+<% if flash.has?(:message) %>
   <p>Successfully updated song.</p>
 <% else %>
   <p>Successfully created song.</p>
