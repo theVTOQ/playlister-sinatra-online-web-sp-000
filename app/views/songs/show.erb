@@ -1,0 +1,16 @@
+<h1>Name: <%= @song.name %></h1>
+
+<h2>Artist: <a href="/artists/<%= @song.artist.slug %>"><%= @song.artist.name %></a></h2>
+
+<h3>Genres:</h3>
+<ol>
+<% @song.genres.each do |genre| %>
+  <li><a href="/genres/<%= genre.slug %>"><%= genre.name %></a></li>
+<% end %>
+</ol>
+<p>Time between creation and update: <%= @song.updated_at - @song.created_at %></p>
+<% if @song.updated_at > @song.created_at %>
+  <p>Successfully updated song.</p>
+<% else %>
+  <p>Successfully created song.</p>
+<% end %>
